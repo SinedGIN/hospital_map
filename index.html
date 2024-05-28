@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск кабинетов - ГБУЗ - "ГП № 12 ДЗМ"</title>
+    <link rel="stylesheet" href="pages/main__page/styles/styles.css">
+    <link rel="shortcut icon" href="./pages/main__page/images/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+
+            <div class="header__container">
+                <div class="header__cabinets"><a href="pages/doctors__page/index.html">Кабинеты</a></div>
+                <div class="header__log"><a href="index.html"><img src="pages/main__page/images/logo.svg" alt="#"></a></div>
+                <div class="header__floors"><a href="pages/Floors__page/index.html">Этажи</a></div>
+            </div>
+
+        </header>
+
+        <main class="content">
+
+            <div class="content__container">
+
+                <h1 class="content__type">Больница</h1>
+                <input autocomplete="off" onfocus="CheckOverlap()" oninput="CheckOverlap()" 
+                id="search_input" class="content__search" type="text" placeholder="Введите кабинет" value="">
+                <div class="content__hint hint">
+                    <div id="hints_search" class="hint__body"></div>
+                    <div class="hint__space"></div>
+                </div>
+                <div id="search_alert" class="content__alert"></div>
+                <button onclick="search_map_image()" class="content__btn" type="submit">Искать</button>
+            </div>
+
+            <div class="content__title title">
+                <h2 class="title__pc">ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ЗДРАВООХРАНЕНИЯ ГОРОДА МОСКВЫ 
+                    "ГОРОДСКАЯ ПОЛИКЛИНИКА № 12 ДЕПАРТАМЕНТА ЗДРАВООХРАНЕНИЯ ГОРОДА МОСКВЫ"</h2>
+                <h2 class="title__phone">ГБУЗ "ГП № 12 ДЗМ"</h2>
+            </div>
+        </main>
+    </div>
+
+    <script type="application/javascript" src="pages/main__page/scripts/sctipts.js"></script>
+
+</body>
+</html>

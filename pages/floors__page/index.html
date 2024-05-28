@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Этажи - ГБУЗ - "ГП № 12 ДЗМ"</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="../main__page/images/logo.svg" type="image/x-icon">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__cabinets"><a href="../doctors__page/index.html">Кабинеты</a></div>
+                <div class="header__log"><a href="../../index.html"><img src="../main__page/images/logo.svg" alt="#"></a></div>
+                <div class="header__floors"><a href="index.html">Этажи</a></div>
+
+                <div id="floor-buttons">
+                    <button onclick="changeFloor(1)" id="floor1btn">1</button>
+                    <button onclick="changeFloor(2)" id="floor2btn">2</button>
+                    <button onclick="changeFloor(3)" id="floor3btn">3</button>
+                    <button onclick="changeFloor(4)" id="floor4btn">4</button>
+                    <button onclick="changeFloor(5)" id="floor5btn">5</button>
+                    <button onclick="changeFloor(6)" id="floor6btn">6</button>
+                    <button onclick="changeFloor(7)" id="floor7btn">7</button>
+                    <!-- Добавьте ссылки для остальных этажей -->
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="map-container">
+
+            <div class="content__container">
+
+                <div class="map-images-wrap">
+                    <img class="map-images"  src="images/floors_images/hospital_map_floor1.png" alt="Hospital_Map_Floor1" id="map-image-1">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor2.png" alt="Hospital_Map_Floor2" id="map-image-2">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor3.png" alt="Hospital_Map_Floor3" id="map-image-3">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor4.png" alt="Hospital_Map_Floor4" id="map-image-4">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor5.png" alt="Hospital_Map_Floor5" id="map-image-5">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor6.png" alt="Hospital_Map_Floor6" id="map-image-6">
+                    <img class="map-images" src="images/floors_images/hospital_map_floor7.png" alt="Hospital_Map_Floor7" id="map-image-7">
+
+                    <div id="floor-buttons">
+                        <button class="floor-btn" onclick="changeFloor(1)" id="floor1Button">Этаж 1</button>
+                        <button class="floor-btn" onclick="changeFloor(2)" id="floor2Button">Этаж 2</button>
+                        <button class="floor-btn" onclick="changeFloor(3)" id="floor3Button">Этаж 3</button>
+                        <button class="floor-btn" onclick="changeFloor(4)" id="floor4Button">Этаж 4</button>
+                        <button class="floor-btn" onclick="changeFloor(5)" id="floor5Button">Этаж 5</button>
+                        <button class="floor-btn" onclick="changeFloor(6)" id="floor6Button">Этаж 6</button>
+                        <button class="floor-btn" onclick="changeFloor(7)" id="floor7Button">Этаж 7</button>
+                        <!-- Добавьте ссылки для остальных этажей -->
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/script.js"></script>
+
+</body>
+</html>

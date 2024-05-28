@@ -1,0 +1,288 @@
+
+@import 'reset.scss';
+
+
+$all_bg_header: rgb(255, 255, 255);
+$block_bg_header: rgb(255, 255, 255);
+$url_header: rgb(50, 50, 50);
+
+%defualt_settings_elem_header {
+    flex: 1 1 0px;
+    align-self: center;
+    text-align: center;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+//Header
+.header {
+    background-color: $all_bg_header;
+    border-bottom: 2px solid rgb(195, 195, 195);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.header__container {
+    display: flex;
+    width: 45%;
+    height: 95px;
+    background-color: $block_bg_header;
+    margin: 0 auto;
+
+    a {
+        color: $url_header;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.header__cabinets {
+    @extend %defualt_settings_elem_header;
+}
+
+.header__log {
+    @extend %defualt_settings_elem_header;
+
+    a {
+
+        img {
+            width: 80px;
+            height: 60px
+        }
+    }
+}
+
+.header__floors {
+    @extend %defualt_settings_elem_header;
+}
+
+.content {
+    flex: 1 1 auto;
+    height: 80%;
+    width: 100%;
+    padding: 3% 9% 3% 9%;
+}
+
+.content__container {
+    border: 5px solid rgb(195, 195, 195);
+    height: 100%;
+    overflow: auto;
+}
+
+.map-images-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img {
+        max-width:100%;
+        max-height:100%;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+#target {
+    margin: 10px ;
+    border: 2px solid rgb(204, 28, 28);
+}
+
+
+
+/* Скрыть все изображения этажей, кроме первого */
+#map-container img:not(#map-image-1) {
+    display: none;
+}
+
+/* Стили для контейнера кнопок этажей */
+#floor-buttons {
+    position: fixed; /* Отступ слева */
+    left: 10px;
+    top: 50%; /* Выравнивание по вертикали */
+    transform: translateY(-50%);
+    display: flex; /* Отображение кнопок горизонтально */
+    flex-direction: column; /* Выравнивание кнопок по вертикали */
+}
+
+/* Стили для кнопок этажей */
+#floor-buttons button {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: auto; /* Автоматическая ширина кнопки */
+    margin-bottom: 10px; /* Отступ между кнопками */
+    padding: 15px; /* Поля вокруг текста, увеличено до 15px */
+    text-align: left; /* Выравнивание текста по левому краю */
+    text-decoration: none; /* Убираем подчеркивание */
+    border: none;
+    background-color: #f0f0f0; /* Цвет кнопки */
+    color: #333; /* Цвет текста */
+    cursor: pointer;
+    font-size: 16px; /* Увеличиваем размер шрифта до 18px */
+}
+
+/* Стили для активной кнопки */
+#floor-buttons button.active {
+    background-color: #14ca5a; /* Зеленый цвет для активной кнопки */
+    color: #fff; /* Белый цвет текста */
+}
+
+/* Изменение цвета кнопки при наведении */
+#floor-buttons button:not(.active):hover {
+    background-color: #ddd;
+}
+
+.floor-btn {
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+#floor1btn{
+    right: 185px;
+}
+#floor2btn{
+    right: 135px;
+}
+#floor3btn{
+    right: 85px;
+}
+#floor4btn{
+    right: 35px;
+}
+#floor5btn{
+    right: -15px;
+}
+#floor6btn{
+    right: -65px;
+}
+#floor7btn{
+    right: -115px;
+}
+
+#floor1btn, #floor2btn, #floor3btn, #floor4btn, #floor5btn, #floor6btn, #floor7btn {
+    display: none !important;
+    position: absolute;
+    top: 186px;
+    padding: 7px 12px !important;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(37, 186, 74) !important;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 1px 1px 1px 1px rgb(61, 142, 81);
+    color: rgb(246, 242, 242) !important;
+}
+
+@media (min-width: 1400px) {
+    #floor-buttons {
+        left: 43px;
+    }
+}
+
+@media (max-width: 1150px) {
+    #floor-buttons button {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .header__log img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header__container {
+        position: relative;
+        width: 100px;
+        height: 100px !important;
+    }
+
+    .content {
+        padding: 70px 9% 3% 9%;
+    }
+
+    .content__container {
+        position: relative;
+        display: flex;
+        height: 100%;
+        text-align: center;
+        overflow: visible;
+        justify-content: center;
+    }
+
+    .header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
+        height: 140px;
+    }
+
+    .header__cabinets {
+        position: absolute;
+        top: 40px;
+        right: 120px;
+        height: 40px;
+        width: 120px;
+        border-radius: 8px;
+        background-color: rgb(26, 171, 173);
+
+        a {
+            display: block;
+            color: rgb(246, 242, 242);
+            margin: 8px 0 0 0;
+        }
+    }
+
+    .header__floors {
+        position: absolute;
+        top: 40px;
+        left: 120px;
+        height: 40px;
+        width: 120px;
+        border-radius: 8px;
+        background-color: rgb(26, 171, 173);
+
+        a {
+            display: block;
+            color: rgb(246, 242, 242);
+            margin: 8px 0 0 0;
+        }
+    }
+
+    #floor-buttons {
+        position: static;
+    }
+
+    #floor1Button, #floor2Button, #floor3Button, #floor4Button, #floor5Button, #floor6Button, #floor7Button {
+        display: none !important;
+    }
+
+    #floor1btn, #floor2btn, #floor3btn, #floor4btn, #floor5btn, #floor6btn, #floor7btn {
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .header__cabinets {
+        right: 100px;
+        width: 100px;
+
+        a {
+            margin: 8px 0 0 5px;
+        }
+    }
+
+    .header__floors {
+        left: 100px;
+        width: 100px;
+    }
+}

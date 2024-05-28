@@ -1,0 +1,361 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active, button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+.header__floors, .header__log, .header__cabinets {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(195, 195, 195);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  height: 95px;
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+}
+.header__container a {
+  color: rgb(50, 50, 50);
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header__log a img {
+  width: 80px;
+  height: 60px;
+}
+
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 80%;
+  width: 100%;
+  padding: 3% 9% 3% 9%;
+}
+
+.content__container {
+  border: 5px solid rgb(195, 195, 195);
+  height: 100%;
+  overflow: auto;
+}
+
+.map-images-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.map-images-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+#target {
+  margin: 10px;
+  border: 2px solid rgb(204, 28, 28);
+}
+
+/* Скрыть все изображения этажей, кроме первого */
+#map-container img:not(#map-image-1) {
+  display: none;
+}
+
+/* Стили для контейнера кнопок этажей */
+#floor-buttons {
+  position: fixed; /* Отступ слева */
+  left: 10px;
+  top: 50%; /* Выравнивание по вертикали */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Отображение кнопок горизонтально */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Выравнивание кнопок по вертикали */
+}
+
+/* Стили для кнопок этажей */
+#floor-buttons button {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  width: auto; /* Автоматическая ширина кнопки */
+  margin-bottom: 10px; /* Отступ между кнопками */
+  padding: 15px; /* Поля вокруг текста, увеличено до 15px */
+  text-align: left; /* Выравнивание текста по левому краю */
+  text-decoration: none; /* Убираем подчеркивание */
+  border: none;
+  background-color: #f0f0f0; /* Цвет кнопки */
+  color: #333; /* Цвет текста */
+  cursor: pointer;
+  font-size: 16px; /* Увеличиваем размер шрифта до 18px */
+}
+
+/* Стили для активной кнопки */
+#floor-buttons button.active {
+  background-color: #14ca5a; /* Зеленый цвет для активной кнопки */
+  color: #fff; /* Белый цвет текста */
+}
+
+/* Изменение цвета кнопки при наведении */
+#floor-buttons button:not(.active):hover {
+  background-color: #ddd;
+}
+
+.floor-btn {
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+#floor1btn {
+  right: 185px;
+}
+
+#floor2btn {
+  right: 135px;
+}
+
+#floor3btn {
+  right: 85px;
+}
+
+#floor4btn {
+  right: 35px;
+}
+
+#floor5btn {
+  right: -15px;
+}
+
+#floor6btn {
+  right: -65px;
+}
+
+#floor7btn {
+  right: -115px;
+}
+
+#floor1btn, #floor2btn, #floor3btn, #floor4btn, #floor5btn, #floor6btn, #floor7btn {
+  display: none !important;
+  position: absolute;
+  top: 186px;
+  padding: 7px 12px !important;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(37, 186, 74) !important;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-box-shadow: 1px 1px 1px 1px rgb(61, 142, 81);
+          box-shadow: 1px 1px 1px 1px rgb(61, 142, 81);
+  color: rgb(246, 242, 242) !important;
+}
+
+@media (min-width: 1400px) {
+  #floor-buttons {
+    left: 43px;
+  }
+}
+@media (max-width: 1150px) {
+  #floor-buttons button {
+    padding: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .header__log img {
+    width: 100px;
+    height: 100px;
+  }
+  .header__container {
+    position: relative;
+    width: 100px;
+    height: 100px !important;
+  }
+  .content {
+    padding: 70px 9% 3% 9%;
+  }
+  .content__container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    text-align: center;
+    overflow: visible;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 140px;
+  }
+  .header__cabinets {
+    position: absolute;
+    top: 40px;
+    right: 120px;
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: rgb(26, 171, 173);
+  }
+  .header__cabinets a {
+    display: block;
+    color: rgb(246, 242, 242);
+    margin: 8px 0 0 0;
+  }
+  .header__floors {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: rgb(26, 171, 173);
+  }
+  .header__floors a {
+    display: block;
+    color: rgb(246, 242, 242);
+    margin: 8px 0 0 0;
+  }
+  #floor-buttons {
+    position: static;
+  }
+  #floor1Button, #floor2Button, #floor3Button, #floor4Button, #floor5Button, #floor6Button, #floor7Button {
+    display: none !important;
+  }
+  #floor1btn, #floor2btn, #floor3btn, #floor4btn, #floor5btn, #floor6btn, #floor7btn {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 500px) {
+  .header__cabinets {
+    right: 100px;
+    width: 100px;
+  }
+  .header__cabinets a {
+    margin: 8px 0 0 5px;
+  }
+  .header__floors {
+    left: 100px;
+    width: 100px;
+  }
+}
